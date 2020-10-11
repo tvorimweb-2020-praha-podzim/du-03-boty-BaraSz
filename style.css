@@ -21,3 +21,149 @@ body {
 */
 
 /* ----- zde zacni psat vlastni css ----- */
+
+
+body {
+    
+    font-family: 'Rubik', sans-serif; 
+    font-size: 14px; 
+    font-weight: 400;
+    background-color: #f5f5f5;
+}
+/*nastaveni obrazku*/
+
+/*dotaz: proc nemuzu nastavit border radius pro div zbozi dohromady, ale musim nastavovat zvlast pro div detaily a div vizual? dekuji*/
+
+.zbozi {
+   display: flex;
+   width: 670px;
+   height: 440px;
+   margin: auto;
+   margin-top: 8rem;
+}
+
+/*prava strana detaily o bote*/
+
+.detaily {
+    background-color: #fff;
+    padding: 30px;
+    width: 50%;
+    border-radius: 0 3% 3% 0;
+}
+
+.nazev {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.produkt {
+    color: #959595;
+    margin-bottom: 0px;
+}
+
+.popis {
+    margin: 0px;
+    padding: 30px 0px;
+    border-bottom: 0.1rem solid #06d7c1;
+}
+
+.parametr {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 30px;
+    margin: 0px;
+}
+
+.velikosti {
+    display: flex;
+    justify-content: start;
+    padding-bottom: 45px;
+    
+}
+
+.velikosti li {
+    list-style: none;
+    padding: 0.8rem;
+}  
+
+.vybrana {
+    color:#f15f42;
+    font-weight: bold;
+    border: 0.1rem solid #f15f42;
+    border-radius: 50%;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+/*dotaz: Tady mam trochu problem s pochopenim paddingu. Pro cely div detaily jsem nastavila padding 30px. U div velikost jsem nastavila velikost padding bottom 45px a u div akce padding bottom 30px. Kdyz ale zvysim padding bottom u div velikost, vytlaci mi to div akce pod padding bottom 30px. Jde to nejak zafixovat, at nemusim hledat presna cisla pro nastaveni a proste nastavit pro tlacitko 30 px a zbytek at se "dopocte" automaticky? dekuji */
+
+.akce {
+    padding-bottom: 30px;
+}
+
+.tlacitko {
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    background-color: #f15f42;
+    color: #fff;
+    border-radius: 10%;
+}
+
+
+/*leva strana bota*/
+
+.vizual {
+    width: 50%;
+    padding: 30px;
+    background-image: linear-gradient(#06d7c1, #50cc49);
+    border-radius: 3% 0 0 3%;
+}
+
+.logo {
+    margin-bottom: 30px;
+}
+
+.slogan {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+}
+
+/* dotaz: Velmi podobny tomu vyse: Je mozne nejak nastavit pomoci margin tak abych nemusela nastavovat pozicovani nebo se to opravdu musi vyladovat zkousenim ruznych kombinaci pozicovani a paddingu? dekuji*/
+
+.cenovka {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    left: 30px;
+    bottom: 63px;
+    text-align: end;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+
+.cena {
+    font-size: 28px;   
+}
+
+.zaruka {
+    font-size: 12px; 
+}
+
+.bota {
+    position: relative;
+    top: 10px;
+    right: 110px;
+}
