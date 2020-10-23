@@ -22,44 +22,50 @@ body {
 
 /* ----- zde zacni psat vlastni css ----- */
 
+/*question: I would like to ask, why align-items=center does not work here? */
 
 body {
-    
+    display: flex;
+    justify-content: center;
     font-family: 'Rubik', sans-serif; 
     font-size: 14px; 
     font-weight: 400;
     background-color: #f5f5f5;
 }
+
+
 /*nastaveni obrazku*/
 
-/*dotaz: proc nemuzu nastavit border radius pro div zbozi dohromady, ale musim nastavovat zvlast pro div detaily a div vizual? dekuji*/
 
 .zbozi {
    display: flex;
    width: 670px;
    height: 440px;
-   margin: auto;
-   margin-top: 8rem;
 }
 
 /*prava strana detaily o bote*/
 
+/*question: You recommended me to use flex-basis instead of width. I do not use .detaily as dislpay=flex, so is it because I used it for whole class .zbozi? (I have feeling that should use more "flex-box-style" in this homework but I do not know how/where but I guess it will come with more lectures :) )  */
+
 .detaily {
+    position: relative;
     background-color: #fff;
     padding: 30px;
-    width: 50%;
-    border-radius: 0 3% 3% 0;
+    flex-basis: 50%;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 1.5px 1px rgb(206, 204, 204);
 }
 
 .nazev {
     font-size: 20px;
     font-weight: 500;
     text-transform: uppercase;
+    margin:0;
 }
 
 .produkt {
     color: #959595;
-    margin-bottom: 0px;
+    margin-bottom: 0px
 }
 
 .popis {
@@ -72,29 +78,35 @@ body {
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 500;
-    padding-top: 30px;
-    margin: 0px;
+    margin-top: 30px;
 }
 
 .velikosti {
     display: flex;
-    justify-content: start;
-    padding-bottom: 45px;
-    
+    justify-content: space-between;
 }
+
 
 .velikosti li {
     list-style: none;
-    padding: 0.8rem;
+    padding: 5px;
+    border: 1px solid transparent;
 }  
 
-.vybrana {
+li:hover {
+    color: #f15f42;
+    border: 0.5px solid #f15f42;
+    border-radius: 50%;
+
+}
+
+/*.vybrana {
     color:#f15f42;
     font-weight: bold;
     border: 0.1rem solid #f15f42;
     border-radius: 50%;
 }
-
+*/
 ul {
     padding: 0;
     margin: 0;
@@ -106,10 +118,11 @@ a {
     color: black;
 }
 
-/*dotaz: Tady mam trochu problem s pochopenim paddingu. Pro cely div detaily jsem nastavila padding 30px. U div velikost jsem nastavila velikost padding bottom 45px a u div akce padding bottom 30px. Kdyz ale zvysim padding bottom u div velikost, vytlaci mi to div akce pod padding bottom 30px. Jde to nejak zafixovat, at nemusim hledat presna cisla pro nastaveni a proste nastavit pro tlacitko 30 px a zbytek at se "dopocte" automaticky? dekuji */
 
 .akce {
-    padding-bottom: 30px;
+    position: absolute;
+    bottom: 30px;
+    
 }
 
 .tlacitko {
@@ -117,21 +130,24 @@ a {
     padding: 1rem 2rem;
     background-color: #f15f42;
     color: #fff;
-    border-radius: 10%;
+    border-radius: 10px;
+    box-shadow: 1px 1px rgb(206, 204, 204);
 }
 
 
 /*leva strana bota*/
 
 .vizual {
-    width: 50%;
+    position: relative;
+    flex-basis: 50%;
     padding: 30px;
     background-image: linear-gradient(#06d7c1, #50cc49);
-    border-radius: 3% 0 0 3%;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 1.5px 1px rgb(206, 204, 204);
 }
 
 .logo {
-    margin-bottom: 30px;
+    margin-bottom:30px;
 }
 
 .slogan {
@@ -141,17 +157,13 @@ a {
     margin: 0;
 }
 
-/* dotaz: Velmi podobny tomu vyse: Je mozne nejak nastavit pomoci margin tak abych nemusela nastavovat pozicovani nebo se to opravdu musi vyladovat zkousenim ruznych kombinaci pozicovani a paddingu? dekuji*/
-
 .cenovka {
     color: #fff;
     font-weight: 500;
-    position: relative;
-    left: 30px;
-    bottom: 63px;
+    position: absolute;
+   right: 30px;
+    bottom: 30px;
     text-align: end;
-    padding-right: 30px;
-    padding-bottom: 30px;
 }
 
 .cena {
@@ -163,7 +175,7 @@ a {
 }
 
 .bota {
-    position: relative;
-    top: 10px;
-    right: 110px;
+    position: absolute;
+    top: 145px;
+    right: 10px;
 }
